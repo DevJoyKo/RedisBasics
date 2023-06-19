@@ -1,0 +1,12 @@
+# Redis commandlines
+
+# key-value data set
+set key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL]
+
+ex1) set mykey "value"
+ex2) get mykey
+ex3) set mykey "value" NX # lock 구현
+ex4) set mykey "value" EX 10 # expire seconds
+ex5) set mykey "value" PX 1000 # expire milliseconds
+ex6) set mykey "value" XX # 덮어쓰기
+

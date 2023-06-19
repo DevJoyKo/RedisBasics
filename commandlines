@@ -3,10 +3,20 @@
 # key-value data set
 set key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL]
 
+# String 형식 데이터 저장/조회
 ex1) set mykey "value"
 ex2) get mykey
 ex3) set mykey "value" NX # lock 구현
 ex4) set mykey "value" EX 10 # expire seconds
 ex5) set mykey "value" PX 1000 # expire milliseconds
 ex6) set mykey "value" XX # 덮어쓰기
+ex7) mget key1 key2 # 여러개의 key 데이터 조회
+
+------------------------------------------------
+
+ex8) set counter 0
+ex9) INCR counter # get 하면 1증가
+ex10) INCRBY counter 3 # 특정 숫자 만큼 increment
+ex11) INCRBYFLOAT counter 1.5
+
 

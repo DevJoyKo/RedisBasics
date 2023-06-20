@@ -1,4 +1,5 @@
 # Redis commandlines
+# docker exec -it redis_boot redis-cli # 접속 command
 
 # key-value data set
 set key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL]
@@ -18,5 +19,19 @@ ex8) set counter 0
 ex9) INCR counter # get 하면 1증가
 ex10) INCRBY counter 3 # 특정 숫자 만큼 increment
 ex11) INCRBYFLOAT counter 1.5
+
+--------------------------------------------------
+
+# List 형식 데이터 저장/조회
+ex12) LPUSH mylist one
+ex13) LRANGE mylist 0 -1
+ex14) LPUSH mylist two
+ex15) RPUSH mylist three
+ex16) RPOP mylist
+ex17) LLEN mylist
+ex18) LMOVE mylist mylist2 LEFT LEFT
+ex19) LMOVE circle circle LEFT RIGHT # circular
+
+--------------------------------------------------
 
 

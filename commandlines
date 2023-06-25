@@ -34,4 +34,26 @@ ex19) LMOVE circle circle LEFT RIGHT # circular
 
 --------------------------------------------------
 
+# Set 형식 데이터 저장/조회
+ex20) SADD key1 one two three
+ex21) SMEMBERS key1 #순서 일관성 없음
+ex22) DEL key1
+ex23) SREM key1 one
+ex24) SADD key1 two
+ex25) SCAN key1 0 match *~ count 1
+ex26) SISMEMBER key1 "~~"
+ex27) SINTER key1 key2 # 두개의 set 중 intersection
+ex28) SCARD key1 (set의 사이즈 조회 - cardinality)
+
+--------------------------------------------------
+
+# Sorted Set - 같은 스코어를 가진 member -> 문자열 순 정렬
+
+ex29) ZADD myset 1 one
+ex30) ZRANGE myset 0 -1 WITHSCORES
+ex31) ZRANK myset one
+ex32) ZREVRANK myset
+ex33) ZREMRANGEBYSCORE
+
+
 
